@@ -36,4 +36,14 @@ export class TodoService {
       params,
     });
   } */
+
+  getPosts() {
+    // body ejemplo
+    const body = {
+      id: 1,
+      comment: 'Hola',
+      date: '2023-11-24',
+    };
+    return this.http.post(`https://jsonplaceholder.typicode.com/posts`, body);
+  }
 }
