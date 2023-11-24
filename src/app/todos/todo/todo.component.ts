@@ -22,7 +22,7 @@ export class TodoComponent implements OnInit {
         }),
         tap((res) => {
           console.log('desde tap', res);
-        })
+        }) // tap operador especial no interfiere flujo de datos
       ) // tuberia
       .subscribe((res) => {
         console.log('nueva data', res);
