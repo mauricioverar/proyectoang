@@ -23,6 +23,11 @@ const routes: Routes = [
       { path: 'historial', component: HistorialCompraComponent },
     ],
   },
+  {
+    path: 'venta',
+    loadChildren: () =>
+      import('./venta/venta.module').then((m) => m.VentaModule), // func q devuelve una promesa (async), devolviendo VentaModule al final
+  },
 ];
 
 @NgModule({
