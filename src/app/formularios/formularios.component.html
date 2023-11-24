@@ -1,0 +1,25 @@
+<p>formularios works!</p>
+
+<div>
+  <input type="text" placeholder="Nombre" [formControl]="name" />
+  valor:
+  <pre>
+    <!-- {{ name.value }} -->
+    {{ name | json }}
+  </pre>
+  <!-- directiva formControl -->
+</div>
+
+<div>
+  <input type="checkbox" [formControl]="isChecked" />
+
+  <!-- <pre>
+      {{ isChecked | json }}
+  </pre> -->
+  <!-- <code>
+      {{ isChecked | json }}
+    </code> -->
+  {{ isChecked.value }}
+</div>
+
+<button [disabled]="name.errors">Send</button>

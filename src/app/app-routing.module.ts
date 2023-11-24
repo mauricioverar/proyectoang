@@ -6,6 +6,7 @@ import { ListadoComponent } from './compra/listado/listado.component';
 import { NuevaCompraComponent } from './compra/nueva-compra/nueva-compra.component';
 import { HistorialCompraComponent } from './compra/historial-compra/historial-compra.component';
 import { AuthGuard } from './auth.guard';
+import { FormulariosComponent } from './formularios/formularios.component';
 // import { CommonModule } from '@angular/common'; // no se necesita
 
 // Rutas
@@ -28,6 +29,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./venta/venta.module').then((m) => m.VentaModule), // func q devuelve una promesa (async), devolviendo VentaModule al final
   },
+  { path: 'formularios', component: FormulariosComponent },
 ];
 
 @NgModule({
