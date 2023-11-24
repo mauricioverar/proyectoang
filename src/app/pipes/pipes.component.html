@@ -1,3 +1,29 @@
 <p>pipes works!</p>
 
-{{name}}
+<div>
+  <div>
+    Uppercase:
+    {{ name | uppercase }}
+  </div>
+  <div>
+    Titlecase:
+    {{ name | titlecase }}
+  </div>
+  <div>
+    Date:
+    {{ date | date }}
+  </div>
+  <div>
+    Date:
+    {{ date | date : "short" }}
+  </div>
+  <!-- <div>
+    Date:
+    {{ value | estado }}
+  </div> -->
+
+  <p>Estado transaccion: {{ estado | estados }}</p>
+  <!-- no usar funciones en html, mejor usar pipes -->
+  <!-- <p>Estado transaccion: {{ getTextState() }}</p> -->
+  <button (click)="changeState()">cambiar estado</button>
+</div>
