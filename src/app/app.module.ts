@@ -12,6 +12,9 @@ import { CompraModule } from './compra/compra.module';
 import { AppRoutingModule } from './app-routing.module';
 import { VentaModule } from './venta/venta.module';
 import { FormulariosComponent } from './formularios/formularios.component';
+import { TodosComponent } from './todos/todos.component';
+
+import { HttpClientModule } from '@angular/common/http'; // importar modulo
 
 @NgModule({
   declarations: [
@@ -22,14 +25,16 @@ import { FormulariosComponent } from './formularios/formularios.component';
     PipesComponent,
     EstadosPipe,
     FormulariosComponent,
+    TodosComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     CompraModule,
     VentaModule,
-    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
