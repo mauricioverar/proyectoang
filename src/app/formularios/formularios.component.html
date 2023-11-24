@@ -1,25 +1,25 @@
 <p>formularios works!</p>
+<form [formGroup]="form">
+  <div>
+    <input type="text" placeholder="Nombre" formControlName="name" />
+    <!-- valor: -->
+    <pre>
+    {{ form.get("name")?.value }}
+    </pre>
+    <!-- directiva formControl -->
+  </div>
 
-<div>
-  <input type="text" placeholder="Nombre" [formControl]="name" />
-  valor:
-  <pre>
-    <!-- {{ name.value }} -->
-    {{ name | json }}
-  </pre>
-  <!-- directiva formControl -->
-</div>
+  <div>
+    <input type="checkbox" formControlName="isChecked" />
 
-<div>
-  <input type="checkbox" [formControl]="isChecked" />
-
-  <!-- <pre>
+    <!-- <pre>
       {{ isChecked | json }}
   </pre> -->
-  <!-- <code>
+    <!-- <code>
       {{ isChecked | json }}
     </code> -->
-  {{ isChecked.value }}
-</div>
-
-<button [disabled]="name.errors">Send</button>
+    {{ form.get("isChecked")?.value }}
+  </div>
+</form>
+{{ form.value | json }}
+<button [disabled]="form.get('name')?.errors">Send</button>

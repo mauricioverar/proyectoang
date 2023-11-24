@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formularios',
@@ -7,8 +7,10 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./formularios.component.scss'],
 })
 export class FormulariosComponent implements OnInit {
-  name = new FormControl('', [Validators.minLength(4), Validators.required]);
-  isChecked = new FormControl('false');
+  form = new FormGroup({
+    name: new FormControl('', [Validators.minLength(4), Validators.required]),
+    isChecked: new FormControl('false'),
+  });
 
   constructor() {}
 
