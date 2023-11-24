@@ -1,2 +1,14 @@
+<button [routerLink]="['/compra/nueva']" routerLinkActive="active">
+  Nueva
+</button>
+<button [routerLink]="['/compra/historial']" routerLinkActive="active">
+  Historial
+</button>
+
+<hr />
 <p>listado works!</p>
-<app-nueva-compra></app-nueva-compra>
+<!-- <app-nueva-compra></app-nueva-compra> -->
+
+<router-outlet></router-outlet>
+<!-- agregar esto para que links funcionen -->
+<!-- cada contenedor debe tenerlo para poder renderizar sus rutas hijas -->
