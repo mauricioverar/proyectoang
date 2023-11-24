@@ -9,6 +9,10 @@ export class AtributoComponent implements OnInit {
 
   constructor() { }
 
+  // messageType = 'info'
+  messageType = 100
+  inputValue = 'Hola'
+
   ngOnInit(): void {
   }
 

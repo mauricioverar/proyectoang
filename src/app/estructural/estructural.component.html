@@ -1,1 +1,25 @@
 <p>estructural works!</p>
+
+<!-- si es falso no renderiza -->
+<!-- Directiva *ngIf isError es dinamico -->
+<div 
+class="error"
+*ngIf="isError"
+>
+  Msj error: algo erró
+</div>
+
+<button (click)="showError()">Mostrar err</button>
+
+<!-- diretiva *ngFor -->
+<ul>
+  <!-- <li *ngFor="let section of sections">{{section}}</li> -->
+  <li *ngFor="let section of sections">{{section.id}}  {{section.name}}</li>
+</ul>
+
+<ng-template #noContent>
+  contenido template
+</ng-template>
+
+<!-- <ng-container *ngTemplateOutlet="noContent"></ng-container> -->
+<ng-container *ngTemplateOutlet="isError ? noContent : null"></ng-container>

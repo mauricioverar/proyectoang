@@ -1,1 +1,12 @@
 <p>atributo works!</p>
+<!-- <p [ngClass]="{ info: true }">mensaje</p> -->
+<!-- <p [ngClass]="messageType">mensaje</p> -->
+<p [ngClass]="{ 'info': messageType === 1, 'error': messageType !== 1 }">mensaje</p>
+
+<p [ngStyle]="{ 'color': messageType === 1 ? 'green':'red' }">sin mensaje</p>
+
+<input type="text" [(ngModel)]="inputValue">
+
+<!-- interpolación {{}} mustacho -->
+Valor actual input {{inputValue}}
+<!-- manejando de manera dinamica, con logica encapsulada -->
