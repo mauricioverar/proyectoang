@@ -12,7 +12,10 @@ export class TodosComponent implements OnInit {
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
-    this.todoService.getTodos().subscribe((res: any) => {
+    /* this.todoService.post$.subscribe((res) => {
+      console.log('nueva data', res);
+    }); */
+    /* this.todoService.getTodos().subscribe((res: any) => {
       // console.log(res);
       this.todos = res;
       console.log(this.todos);
@@ -24,6 +27,12 @@ export class TodosComponent implements OnInit {
 
     this.todoService.getPosts().subscribe((res) => {
       console.log('Posts:', res);
-    });
+    }); */
+  }
+
+  updatePost() {
+    // abrir caño de la manguera
+    // this.todoService.postSource.next('Informacion');
+    this.todoService.postSource.next([1, 2, 3, 4, 5]);
   }
 }

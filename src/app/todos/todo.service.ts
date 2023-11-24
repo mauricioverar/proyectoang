@@ -1,11 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; // app.module , sin el Module
+import { map, Subject } from 'rxjs';
 
 // decorador
 @Injectable({
   providedIn: 'root', // se puede usar este servicio dentro de cualquier componente
 })
 export class TodoService {
+  // postSource = new Subject();
+  postSource = new Subject<number[]>();
+  // post$ = this.postSource.asObservable()
+  post$ = this.postSource.asObservable();
+  /* .pipe(
+    // map((res) => {
+    map((res: number[]) => {
+      // res = ['uno', 'dos', 'tres'];
+      console.log(res); // undefined
+      // return res;
+      return res.filter((num) => num > 3); // filtrar > 3
+    })
+  ); // tuberia */
+
   constructor(private http: HttpClient) {}
 
   getTodos() {
@@ -38,6 +53,7 @@ export class TodoService {
   } */
 
   getPosts() {
+    // observable
     // body ejemplo
     const body = {
       id: 1,
