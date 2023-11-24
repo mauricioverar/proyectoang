@@ -45,5 +45,6 @@ export class TodoService {
       date: '2023-11-24',
     };
     return this.http.post(`https://jsonplaceholder.typicode.com/posts`, body);
+    // return this.http.delete(`https://jsonplaceholder.typicode.com/posts`, body);
   }
 }

@@ -14,7 +14,8 @@ import { VentaModule } from './venta/venta.module';
 import { FormulariosComponent } from './formularios/formularios.component';
 import { TodosComponent } from './todos/todos.component';
 
-import { HttpClientModule } from '@angular/common/http'; // importar modulo
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // importar modulo
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { HttpClientModule } from '@angular/common/http'; // importar modulo
     CompraModule,
     VentaModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
